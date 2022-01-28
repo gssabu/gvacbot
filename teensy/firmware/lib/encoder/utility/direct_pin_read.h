@@ -15,6 +15,13 @@
 #define PIN_TO_BITMASK(pin)             (digitalPinToBitMask(pin))
 #define DIRECT_PIN_READ(base, mask)     (((*(base)) & (mask)) ? 1 : 0)
 
+#elif defined(__IMXRT1052__) || defined(__IMXRT1062__)
+
+#define IO_REG_TYPE			uint32_t
+#define PIN_TO_BASEREG(pin)             (portOutputRegister(pin))
+#define PIN_TO_BITMASK(pin)             (digitalPinToBitMask(pin))
+#define DIRECT_PIN_READ(base, mask)     (((*(base)) & (mask)) ? 1 : 0)
+
 #elif defined(__PIC32MX__)
 
 #define IO_REG_TYPE			uint32_t
