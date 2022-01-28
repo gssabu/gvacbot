@@ -1,18 +1,18 @@
-#ifndef LINO_BASE_H
-#define LINO_BASE_H
+#ifndef GVAC_BASE_H
+#define GVAC_BASE_H
 
 #include <ros/ros.h>
-#include <lino_msgs/Velocities.h>
+#include <gvac_msgs/Velocities.h>
 #include <tf2_ros/transform_broadcaster.h>
 #include <nav_msgs/Odometry.h>
 #include <tf2/LinearMath/Quaternion.h>
 #include <geometry_msgs/TransformStamped.h>
 
-class LinoBase
+class GvacBase
 {
 public:
-    LinoBase();
-    void velCallback(const lino_msgs::Velocities& vel);
+    GvacBase();
+    void velCallback(const gvac_msgs::Velocities& vel);
 
 private:
     ros::NodeHandle nh_;
